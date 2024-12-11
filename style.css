@@ -1,0 +1,12 @@
+
+body {
+    background-color: black;
+    max-height: min-content;
+    
+}
+.cards {
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 20px;
+    height: auto;
+}
