@@ -17,17 +17,58 @@
 //    If player makes 3 wrong choices they lose
 //    Clearly indicate if the player won or loss
 
+let clock = 0;
+const ballCards = [
+    "Ballcards1",
+    "Ballcards2",
+    "Ballcards3",
+    "Ballcards4",
+    "Ballcards5",
+    "Ballcards6",
+    "Ballcards7",
+    "Ballcards88",
+    "Ballcards9",
+    "Ballcards10",
+];
+// console.log(ballCards)
 
-/*-------------------------------- Constants --------------------------------*/
-const cardChoices = ["coyote", "parrot", "monkey", "monkey", "cheetah", "elephant", "panda", "racoon", "giraffe", "lamb", "zebra", "zebra", "frog", "pig", "octopus", "giraffe", "tiger", "octopus", "pig", "tiger", "bear", "lamb", "panda", "bear", "frog", "elephant", "racoon", "cheetah", "coyote", "parrot"]
+let cardsArr = []; // set cardReset to any empty array
+const gameBoard = []; // set gameBoard to any empty array
+let rows = 5;
+let columns = 4;
 
-/*-------------------------------- Variables --------------------------------*/
-const clickCards = document.querySelectorAll('button');
-/*------------------------ Cached Element References ------------------------*/
 
-/*-------------------------------- Functions --------------------------------*/
+window.onload = function () {
+    shuffleCards();
+    gameStart();
+}
 
-/*----------------------------- Event Listeners -----------------------------*/
-// clickCards.addEventListener('click', function (event){
-//     return "clicked"
-// })
+ function shuffleCards () {
+    cardsArr = ballCards.concat(ballCards); // ballCards.concat gives make 2 of each card
+    console.log(cardsArr); // shows the ballCards  x2
+    for (let i = 0; i < cardsArr.length; i++) { //for loop to iterate through ballCards
+        let a = Math.floor(Math.random() * cardsArr.length); // new init {a} when cards reach the cards length to get a random card (index)
+        let b = cardsArr[i]; // change the order   //init b 
+        cardsArr[i] = cardsArr[a]; //after i goes through the loop it eaquals (a) that has been randomized
+        cardsArr[a] = b; // then b retains the value of (a)
+    }
+    console.log(cardsArr); //prints the new randomized array of cards
+}
+
+function gameStart() {
+    for (let r = 0; r < rows; r++) {
+        let row = [];
+    for (let c = 0; c < columns; c++) {
+        let ballcardsImg = cardsArr.pop();
+        row.push(ballcardsImg);
+
+        let ballCard = document.createElement('img');
+        ballCard.id = r.toString() + '-' + c.toString();
+        ballCard.src = ballcardsImg + '.jpg';
+        ballCard.classList.add('ballcard')
+        document.getElementById('game-board').append(ballCard)
+    }
+    gameBoard.push(row)
+ }
+console.log(board)
+}

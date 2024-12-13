@@ -8,49 +8,19 @@
     <title>Memory Cards Game</title>
 </head>
 <body>
-   <header>
-    <h1 id="gameintro">Welcome to the Memory Game!</h1>
-   </header>
-   <h4>Lets see how good your memory really is!!</h4>
-   <h6>Game Instructions: The player must match all of the following pictures by clicking them. Each game gives the player a maximum of 60 seconds to match all cards correctly. Once the player matches two cards correctly, they will recieve 50 points towards there (Best Score). If a player matches a wrong pair 3 times the game is over. GOOD LUCK!! </h6>
-   <h3 class="clock">Mental Clock:</h3>
-   <h3 class="score">Best Score:</h3>
-   <p id="gameresult-display"></p>
- <div class="cards-container">
-    <button id="coyote"><img src="https://cdn.clarku.edu/wp-content/uploads/sites/2/2022/03/Coyote-animal-sentience-research.jpg" alt="A coyote"></button>
-    <button id="parrot"><img src="https://media.newyorker.com/photos/62c4511e47222e61f46c2daa/4:3/w_2663,h_1997,c_limit/shouts-animals-watch-baby-hemingway.jpg" alt="A Parrot"></button>
-    <button id="monkey"><img src="https://media.istockphoto.com/id/1341341634/photo/cute-baby-chimpanzee-portrait.jpg?s=612x612&w=0&k=20&c=UK7b8hsMQL30ma_6XEL7MN6khgUyDXKRxTpkY_JaSek=" alt="A Monkey"></button>
-    <button id="monkey"><img src="https://media.istockphoto.com/id/1341341634/photo/cute-baby-chimpanzee-portrait.jpg?s=612x612&w=0&k=20&c=UK7b8hsMQL30ma_6XEL7MN6khgUyDXKRxTpkY_JaSek=" alt="A Monkey"></button>
-    <button id="cheetah"><img src="https://images.unsplash.com/photo-1497899236524-c79659901d7c?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFieSUyMGFuaW1hbHN8ZW58MHx8MHx8fDA%3D" alt="A Cheetah"></button>
-    <button id="elephant"><img src="https://ideas.ted.com/wp-content/uploads/sites/3/2020/05/final_animals-homeschooling_credit-alamy.jpg" alt="An Elephant"></button>
-    <button id="panda"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Giant_Panda_2004-03-2.jpg/1200px-Giant_Panda_2004-03-2.jpg" alt="A Panda"></button>
-    <button id="racoon"><img src="https://varmentguard.com/uploads/permanent/963dbe2472d23882bf65f6fc5748ffbe.jpg" alt="A Racoon"></button>
-    <button id="giraffe"><img src="https://i.natgeofe.com/n/bec7bd50-0d57-4982-aeb5-82e5f8184f89/02-machine-saving-animals-nationalgeographic_1977490.jpg" alt="Giraffe"></button>
-    <button id="lamb"><img src="https://aldf.org/wp-content/uploads/2018/05/lamb-iStock-665494268-16x9-e1559777676675-1200x675.jpg" alt="A Lamb"></button>
-    <button id="zebra"><img src="https://www.riverbanks.org/animals/assets/graphics/mammals/header_0780.jpg" alt="Zebra"></button>
-    <button id="zebra"><img src="https://www.riverbanks.org/animals/assets/graphics/mammals/header_0780.jpg" alt="Zebra"></button>
-    <button id="frog"><img src="https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL2dldHR5aW1hZ2VzLTQ2ODUxNTYyOS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjgyOH19fQ==" alt="A Frog"></button>
-    <button id="pig"><img src="https://www.pbs.org/wnet/nature/files/1996/11/pexels-mali-maeder-110820-1280x720.png" alt="A Pig"></button>
-    <button id="octopus"><img src="https://images.newscientist.com/wp-content/uploads/2024/07/17135216/SEI_212385281.jpg" alt="An Octopus"></button>
-    <button id="giraffe"><img src="https://i.natgeofe.com/n/bec7bd50-0d57-4982-aeb5-82e5f8184f89/02-machine-saving-animals-nationalgeographic_1977490.jpg" alt="Giraffe"></button>
-    <button id="tiger"><img src="https://www.colchesterzoologicalsociety.com/wp-content/uploads/2024/09/Tiger-600x380.jpg" alt="A Tiger"></button>
-    <button id="octopus"><img src="https://images.newscientist.com/wp-content/uploads/2024/07/17135216/SEI_212385281.jpg" alt="An Octopus"></button>
-    <button id="pig"><img src="https://www.pbs.org/wnet/nature/files/1996/11/pexels-mali-maeder-110820-1280x720.png" alt="A Pig"></button>
-    <button id="tiger"><img src="https://www.colchesterzoologicalsociety.com/wp-content/uploads/2024/09/Tiger-600x380.jpg" alt="A Tiger"></button>
-    <button id="bear"><img src="https://cdn.britannica.com/71/149571-050-C33E9F0F/Brown-bear-Finland.jpg?w=920&h=518&c=crop" alt="A Bear"></button>
-    <button id="lamb"><img src="https://aldf.org/wp-content/uploads/2018/05/lamb-iStock-665494268-16x9-e1559777676675-1200x675.jpg" alt="A Lamb"></button>
-    <button id="panda"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Giant_Panda_2004-03-2.jpg/1200px-Giant_Panda_2004-03-2.jpg" alt="A Panda"></button>
-    <button id="bear"><img src="https://cdn.britannica.com/71/149571-050-C33E9F0F/Brown-bear-Finland.jpg?w=920&h=518&c=crop" alt="A Bear"></button>
-    <button id="frog"><img src="https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL2dldHR5aW1hZ2VzLTQ2ODUxNTYyOS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjgyOH19fQ==" alt="A Frog"></button>
-    <button id="elephant"><img src="https://ideas.ted.com/wp-content/uploads/sites/3/2020/05/final_animals-homeschooling_credit-alamy.jpg" alt="An Elephant"></button>
-    <button id="racoon"><img src="https://varmentguard.com/uploads/permanent/963dbe2472d23882bf65f6fc5748ffbe.jpg" alt="A Racoon"></button>
-    <button id="cheetah"><img src="https://images.unsplash.com/photo-1497899236524-c79659901d7c?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFieSUyMGFuaW1hbHN8ZW58MHx8MHx8fDA%3D" alt="A Cheetah"></button>
-    <button id="coyote"><img src="https://cdn.clarku.edu/wp-content/uploads/sites/2/2022/03/Coyote-animal-sentience-research.jpg" alt="A coyote"></button>
-    <button id="parrot"><img src="https://media.newyorker.com/photos/62c4511e47222e61f46c2daa/4:3/w_2663,h_1997,c_limit/shouts-animals-watch-baby-hemingway.jpg" alt="A Parrot"></button>
-</div>
-</div>
-
-
-
-</body>
+    <h1>Welcome To Baseball Memory Card Game!</h1>
+    <h3>Mental Clock: <span id="clock">0</span></h3>
+    <div id="game-board">
+        <img class="ballcards" src="./images/Ballcards1.jpg">
+        <img class="ballcards" src="./images/Ballcards2.jpg">
+        <img class="ballcards" src="./images/Ballcards3.jpg">
+        <img class="ballcards" src="./images/Ballcards4.jpg">
+        <img class="ballcards" src="./images/Ballcards5.jpg">
+        <img class="ballcards" src="./images/Ballcards6.jpg">
+        <img class="ballcards" src="./images/Ballcards7.jpg">
+        <img class="ballcards" src="./images/Ballcards88.jpg">
+        <img class="ballcards" src="./images/Ballcards9.jpg">
+        <img class="ballcards" src="./images/Ballcards10.jpg">
+    </div>
+   </body>
 </html>
