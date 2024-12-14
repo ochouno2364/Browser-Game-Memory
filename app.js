@@ -130,14 +130,25 @@ let errors = 0;
 
 let score = 0;
 
+let flippedCards = false;
 
-// document.querySelector('#errors').textContent = errors;
+
+document.querySelector('#errors').textContent = errors;
 document.querySelector('.score').textContent = score;
 
-function newBoard() {
-    cardOne = null;
-    cardTwo = null;
-    lockBoard = false;
+// function newBoard() {
+//     cardOne = null;
+//     cardTwo = null;
+//     lockBoard = false;
+// }
+
+function restart() {
+    shuffleCards();
+    score = 0;
+    document.querySelector(".score").textContent = score;
+    gameBoard.innerHTML = "";
+    gameStart();
+   
 }
 
 
@@ -176,60 +187,60 @@ function gameStart() {
 
 
 function cardFlip() {
-    if (lockBoard) return;
-    if (this === cardOne) return;
+    if (lockBoard === false) {
+        this.classList.add("flip-card");
+        if ( flippedCards === false) {
+            flippedCards = true;
+            cardOne = this;
+        } else {
+            cardTwo = this;
+            flippedCards = false;
+            isAMatch();
+            addRuns();
+            cardsUnflipped();
+            render();
+        }
+    }
     
-  this.classList.add("card-flipped");
-
-   if (!cardOne) {
-    cardOne = this;
-    return;
-   }
-
-   cardTwo = this;
-    score++;
-    document.querySelector(".score").textContent = score;
-    lockBoard = true;
-   
- isAMatch();
 }
 
 function isAMatch() {
-    let doesMatch = cardOne.datset.name === cardTwo.dataset.name;
+    if (cardOne.name === cardTwo.name) {
+        addRuns();
+    } else {
+        cardsUnflipped();
+    }
 
-    doesMatch ? disableCards() : cardsUnflipped();
 }
 
 function disableCards() {
     cardOne.removeEventListener("click", cardFlip);
     cardTwo.removeEventListener("click", cardFlip);
 
-    newBoard();
 }
 
 function cardsUnflipped() {
     setTimeout(() => {
-        // cardOne.classList.remove("flipped");
-        // cardTwo.classList.remove("flipped");
-        newBoard();
+        cardOne.classList.remove("flip-card");
+        cardTwo.classList.remove("flip-card");
+        lockBoard = false;
     }, 1000);
 }
 
-
-function restart() {
-    newBoard();
-    shuffleCards();
-    score = 0;
-    document.querySelector(".score").textContent = score;
-    gameBoard.innerHTML = "";
-    gameStart();
-   
+function addRuns() {
+    if(cardOne.name === cardTwo.name) {
+        score.innerHtml = score++;
+    } else {
+        return score;
+    }
+    
 }
 
 
 
 
-// console.log(ballCards)
+document.querySelector('.score').textContent = score;
+
 
 // let cardsArr = []; // set cardReset to any empty array
 // const gameBoard = []; // set gameBoard to any empty array
@@ -268,6 +279,3 @@ function restart() {
 //         // document.getElementById('game-board').append(ballCard)
 //     }
 //     gameBoard.push(row)
-//  }
-// console.log(board)
-// }
