@@ -1,44 +1,54 @@
 {
-    "ballcards": [
+    "ballcards":[
         {
             "image": "./images/Ballcards1.png",
-            "name": "Paul Skenes"
+            "name": "Paul Skenes",
+            "back": "./images/hhhhh.png"
         },
         {
             "image":"./images/Ballcards2.png",
-            "name": "Jazz Chisholm"
+            "name": "Jazz Chisholm",
+            "back": "./images/hhhhh.png"
         },
         {
             "image":"./images/Ballcards3.png",
-            "name": "Elly De La Cruz"
+            "name": "Elly De La Cruz",
+            "back": "./images/hhhhh.png"
         },
         {
             "image":"./images/Ballcards4.png",
-            "name":"Wander Franco"
+            "name":"Wander Franco",
+            "back": "./images/hhhhh.png"
         },
         {
             "image":"./images/Ballcards5.png",
-            "name":"Fernando Tatis Jr."
+            "name":"Fernando Tatis Jr.",
+            "back": "./images/hhhhh.png"
         },
         {
             "image":"./images/Ballcards6.png",
-            "name":"Prelander Berroa"
+            "name":"Prelander Berroa",
+            "back": "./images/hhhhh.png"
         },
         {
             "image":"./images/Ballcards7.png",
-            "name":"Bo Jackson"
+            "name":"Bo Jackson",
+            "back": "./images/hhhhh.png"
         },
         {
             "image":"./images/Ballcards8.png",
-            "name":"Ronald Acuna Jr."
+            "name":"Ronald Acuna Jr.",
+            "back": "./images/hhhhh.png"
         },
         {
             "image":"./images/Ballcards9.png",
-            "name":"Daulton Varsho"
+            "name":"Daulton Varsho",
+            "back": "./images/hhhhh.png"
         },
         {
             "image":"./images/Ballcards10.png",
-            "name":"Pete Alonso"
+            "name":"Pete Alonso",
+            "back": "./images/hhhhh.png"
         }
         
     ]

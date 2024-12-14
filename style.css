@@ -44,27 +44,26 @@ h3 {
     height: calc(100px / 2 * 5);
 }
 
-.card-flipped {
+.ballcards.flipped { 
     transform: rotateY(180deg);
 }
 
-.ballcards-front, .ballcards-back {
+.front, .back {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
 }
 
-.ballcards-front {
+.ballcards, .front {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(./images/hhhhh.png);  
 }
 
-.ballcards-back {
+.ballcards, .back {
+    background-image: url(./images/hhhhh.png);
     background-position: center;
     background-size: cover;
-    transform: rotateY(180deg);
     
 }

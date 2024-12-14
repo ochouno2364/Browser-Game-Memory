@@ -21,108 +21,140 @@ const gameBoard = document.querySelector('#game-board')
 let ballCards = [
     {
         "image": "./images/Ballcards1.png",
-        "name": "Paul Skenes"
+        "name": "Paul Skenes",
+        "back": "./images/hhhhh.png"
     },
     {
         "image":"./images/Ballcards2.png",
-        "name": "Jazz Chisholm"
+        "name": "Jazz Chisholm",
+        "back": "./images/hhhhh.png"
     },
     {
         "image":"./images/Ballcards3.png",
-        "name": "Elly De La Cruz"
+        "name": "Elly De La Cruz",
+        "back": "./images/hhhhh.png"
     },
     {
         "image":"./images/Ballcards4.png",
-        "name":"Wander Franco"
+        "name":"Wander Franco",
+        "back": "./images/hhhhh.png"
     },
     {
         "image":"./images/Ballcards5.png",
-        "name":"Fernando Tatis Jr."
+        "name":"Fernando Tatis Jr.",
+        "back": "./images/hhhhh.png"
     },
     {
         "image":"./images/Ballcards6.png",
-        "name":"Prelander Berroa"
+        "name":"Prelander Berroa",
+        "back": "./images/hhhhh.png"
     },
     {
         "image":"./images/Ballcards7.png",
-        "name":"Bo Jackson"
+        "name":"Bo Jackson",
+        "back": "./images/hhhhh.png"
     },
     {
         "image":"./images/Ballcards8.png",
-        "name":"Ronald Acuna Jr."
+        "name":"Ronald Acuna Jr.",
+        "back": "./images/hhhhh.png"
     },
     {
         "image":"./images/Ballcards9.png",
-        "name":"Daulton Varsho"
+        "name":"Daulton Varsho",
+        "back": "./images/hhhhh.png"
     },
     {
         "image":"./images/Ballcards10.png",
-        "name":"Pete Alonso"
+        "name":"Pete Alonso",
+        "back": "./images/hhhhh.png"
     },
     {
         "image": "./images/Ballcards1.png",
-        "name": "Paul Skenes"
+        "name": "Paul Skenes",
+        "back": "./images/hhhhh.png"
     },
     {
         "image":"./images/Ballcards2.png",
-        "name": "Jazz Chisholm"
+        "name": "Jazz Chisholm",
+        "back": "./images/hhhhh.png"
     },
     {
         "image":"./images/Ballcards3.png",
-        "name": "Elly De La Cruz"
+        "name": "Elly De La Cruz",
+        "back": "./images/hhhhh.png"
     },
     {
         "image":"./images/Ballcards4.png",
-        "name":"Wander Franco"
+        "name":"Wander Franco",
+        "back": "./images/hhhhh.png"
     },
     {
         "image":"./images/Ballcards5.png",
-        "name":"Fernando Tatis Jr."
+        "name":"Fernando Tatis Jr.",
+        "back": "./images/hhhhh.png"
     },
     {
         "image":"./images/Ballcards6.png",
-        "name":"Prelander Berroa"
+        "name":"Prelander Berroa",
+        "back": "./images/hhhhh.png"
     },
     {
         "image":"./images/Ballcards7.png",
-        "name":"Bo Jackson"
+        "name":"Bo Jackson",
+        "back": "./images/hhhhh.png"
     },
     {
         "image":"./images/Ballcards8.png",
-        "name":"Ronald Acuna Jr."
+        "name":"Ronald Acuna Jr.",
+        "back": "./images/hhhhh.png"
     },
     {
         "image":"./images/Ballcards9.png",
-        "name":"Daulton Varsho"
+        "name":"Daulton Varsho",
+        "back": "./images/hhhhh.png"
     },
     {
         "image":"./images/Ballcards10.png",
-        "name":"Pete Alonso"
+        "name":"Pete Alonso",
+        "back": "./images/hhhhh.png"
     }
 ];
 
-let frontCards = ["images", "./images/hhhhh.png", ]
+// let frontCards = ["images", "./images/hhhhh.png", ]
 let cardOne, cardTwo;
 
-let lockBoard = true;
+let lockBoard = false;
 
 let errors = 0;
 
 let score = 0;
-// let rows;
-// let columns;
 
-document.querySelector('#errors').textContent = errors;
 
-function flipCard() {
-card.classList.toggle("is-flipped");
+// document.querySelector('#errors').textContent = errors;
+document.querySelector('.score').textContent = score;
+
+function newBoard() {
+    cardOne = null;
+    cardTwo = null;
+    lockBoard = false;
 }
-const cards = document.querySelectorAll(".ballcards");
-cards.forEach(card => {
-    card.addEventListener("click", () => {
-        flipCard(card)
-    });
-});
+
+
+function shuffleCards() {
+    let curIndex = ballCards.length,
+    ranIndex,
+    tempVal;
+while (curIndex !== 0) {
+    ranIndex = Math.floor(Math.random() * curIndex);
+    curIndex -= 1;
+    tempVal = ballCards[curIndex];
+    ballCards[curIndex]= ballCards[ranIndex];
+    ballCards[ranIndex] = tempVal
+
+}
+}
+
 
 function gameStart() {
     for (let ballCard of ballCards) {
@@ -133,78 +165,65 @@ function gameStart() {
         <div class="front">
           <img class="front-image" src=${ballCard.image}>
           </div>
-          <div class="back"</div>`;
+          <div class="back"
+          <img class="back-image" src=${ballCard.back}>
+          </div>`;
         gameBoard.appendChild(ballCardEl)
-        ballCardEl.addEventListener("click", gameStart)
-    }
-    
-}
-
-function shuffleCards() {
-    let currentIndex = ballCards.length,
-    randomIndex,
-    tempVal;
-while (currentIndex !== 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-    tempVal = ballCards[currentIndex];
-    ballCards[currentIndex]= ballCards[randomIndex];
-    ballCards[randomIndex] = tempVal
-
-}
-}
-
-// function ballCardFlipped() {
-//     if (lockBoard) return;
-//     if (this === cardOne) return card;
-    
-//   this.classList.add("card-flipped");
-
-//    if (!cardOne) {
-//     cardOne = this;
-//     return;
-//    }
-//    cardTwo = this;
-//     score++;
-//     document.querySelector(".score").textContent = score;
-//     lockBoard = true;
+        ballCardEl.addEventListener("click", cardFlip)
+    } 
    
-//  isAMatch();
-// }
+}
 
-// function isAMatch() {
-//     let doesMatch = cardOne.datset.name === cardTwo.dataset.name;
 
-//     doesMatch ? disableCards() : cardsUnflipped();
-// }
+function cardFlip() {
+    if (lockBoard) return;
+    if (this === cardOne) return;
+    
+  this.classList.add("card-flipped");
 
-// function disableCards() {
-//     cardOne.removeEventListener("click", ballCardFlipped);
-//     cardTwo.removeEventListener("click", ballCardFlipped);
+   if (!cardOne) {
+    cardOne = this;
+    return;
+   }
 
-//     newBoard();
-// }
+   cardTwo = this;
+    score++;
+    document.querySelector(".score").textContent = score;
+    lockBoard = true;
+   
+ isAMatch();
+}
+
+function isAMatch() {
+    let doesMatch = cardOne.datset.name === cardTwo.dataset.name;
+
+    doesMatch ? disableCards() : cardsUnflipped();
+}
+
+function disableCards() {
+    cardOne.removeEventListener("click", cardFlip);
+    cardTwo.removeEventListener("click", cardFlip);
+
+    newBoard();
+}
 
 function cardsUnflipped() {
     setTimeout(() => {
-        ballCards.classList.add(".back");
+        // cardOne.classList.remove("flipped");
+        // cardTwo.classList.remove("flipped");
         newBoard();
-    });
-}
-function newBoard() {
-    if(lockBoard == false) {
-        return frontCards();
-    }
+    }, 1000);
 }
 
+
 function restart() {
-    // cardsUnflipped();
-    shuffleCards();
     newBoard();
+    shuffleCards();
     score = 0;
     document.querySelector(".score").textContent = score;
     gameBoard.innerHTML = "";
     gameStart();
+   
 }
 
 
