@@ -1,0 +1,46 @@
+{
+    "ballcards": [
+        {
+            "image": "./images/Ballcards1.png",
+            "name": "Paul Skenes"
+        },
+        {
+            "image":"./images/Ballcards2.png",
+            "name": "Jazz Chisholm"
+        },
+        {
+            "image":"./images/Ballcards3.png",
+            "name": "Elly De La Cruz"
+        },
+        {
+            "image":"./images/Ballcards4.png",
+            "name":"Wander Franco"
+        },
+        {
+            "image":"./images/Ballcards5.png",
+            "name":"Fernando Tatis Jr."
+        },
+        {
+            "image":"./images/Ballcards6.png",
+            "name":"Prelander Berroa"
+        },
+        {
+            "image":"./images/Ballcards7.png",
+            "name":"Bo Jackson"
+        },
+        {
+            "image":"./images/Ballcards8.png",
+            "name":"Ronald Acuna Jr."
+        },
+        {
+            "image":"./images/Ballcards9.png",
+            "name":"Daulton Varsho"
+        },
+        {
+            "image":"./images/Ballcards10.png",
+            "name":"Pete Alonso"
+        }
+        
+    ]
+
+}

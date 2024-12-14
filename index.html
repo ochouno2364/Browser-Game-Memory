@@ -2,25 +2,24 @@
 <html lang="en">
 <head>
     <script defer src="./app.js"></script>
-    <link rel="stylesheet" href="./style.css"><link>
+    <link rel="stylesheet"  href="./style.css"><link>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Cards Game</title>
 </head>
 <body>
     <h1>Welcome To Baseball Memory Card Game!</h1>
-    <h3>Mental Clock: <span id="clock">0</span></h3>
-    <div id="game-board">
-        <img class="ballcards" src="./images/Ballcards1.jpg">
-        <img class="ballcards" src="./images/Ballcards2.jpg">
-        <img class="ballcards" src="./images/Ballcards3.jpg">
-        <img class="ballcards" src="./images/Ballcards4.jpg">
-        <img class="ballcards" src="./images/Ballcards5.jpg">
-        <img class="ballcards" src="./images/Ballcards6.jpg">
-        <img class="ballcards" src="./images/Ballcards7.jpg">
-        <img class="ballcards" src="./images/Ballcards88.jpg">
-        <img class="ballcards" src="./images/Ballcards9.jpg">
-        <img class="ballcards" src="./images/Ballcards10.jpg">
+    <h3>Strike Count: <span id="errors">0</span></h3> <h3>Runs: <span class="score">0</span></h3>
+    <div class="restart-button">
+        <button onclick="restart()">Game Start</button>
     </div>
+    <div id="game-board">
+        <div class="ballcards">
+            <div class="ballcard-front"></div>
+            <div class="ballcard-back"></div>
+        </div>
+        
+    </div>
+    <script defr src="./data/ballcards.json"></script>
    </body>
 </html>

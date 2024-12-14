@@ -70,6 +70,6 @@ Collapse
 
 
 
-
-
+https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns
+https://www.tutorialspoint.com/json/json_syntax.htm
 
