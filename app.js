@@ -142,31 +142,6 @@ document.querySelector('.score').textContent = score;
 //     lockBoard = false;
 // }
 
-function restart() {
-    shuffleCards();
-    score = 0;
-    document.querySelector(".score").textContent = score;
-    gameBoard.innerHTML = "";
-    gameStart();
-   
-}
-
-
-function shuffleCards() {
-    let curIndex = ballCards.length,
-    ranIndex,
-    tempVal;
-while (curIndex !== 0) {
-    ranIndex = Math.floor(Math.random() * curIndex);
-    curIndex -= 1;
-    tempVal = ballCards[curIndex];
-    ballCards[curIndex]= ballCards[ranIndex];
-    ballCards[ranIndex] = tempVal
-
-}
-}
-
-
 function gameStart() {
     for (let ballCard of ballCards) {
         const ballCardEl = document.createElement("div");
@@ -185,6 +160,28 @@ function gameStart() {
    
 }
 
+function shuffleCards() {
+    let curIndex = ballCards.length,
+    ranIndex,
+    tempVal;
+while (curIndex !== 0) {
+    ranIndex = Math.floor(Math.random() * curIndex);
+    curIndex -= 1;
+    tempVal = ballCards[curIndex];
+    ballCards[curIndex]= ballCards[ranIndex];
+    ballCards[ranIndex] = tempVal
+
+}
+}
+
+function restart() {
+    shuffleCards();
+    score = 0;
+    document.querySelector(".score").textContent = score;
+    gameBoard.innerHTML = "";
+    gameStart();
+   
+}
 
 function cardFlip() {
     if (lockBoard === false) {
@@ -196,17 +193,19 @@ function cardFlip() {
             cardTwo = this;
             flippedCards = false;
             isAMatch();
-            addRuns();
-            cardsUnflipped();
-            render();
+            // addRuns();
+            // cardsUnflipped();
+            // render();
         }
+        // addRuns();
     }
     
 }
 
 function isAMatch() {
-    if (cardOne.name === cardTwo.name) {
-        addRuns();
+    if (cardOne.dataset.name === cardTwo.dataset.name) {
+        // addRuns();
+        lockBoard = false;
     } else {
         cardsUnflipped();
     }
@@ -228,11 +227,8 @@ function cardsUnflipped() {
 }
 
 function addRuns() {
-    if(cardOne.name === cardTwo.name) {
-        score.innerHtml = score++;
-    } else {
-        return score;
-    }
+   return score++;
+    
     
 }
 
@@ -240,7 +236,6 @@ function addRuns() {
 
 
 document.querySelector('.score').textContent = score;
-
 
 // let cardsArr = []; // set cardReset to any empty array
 // const gameBoard = []; // set gameBoard to any empty array
