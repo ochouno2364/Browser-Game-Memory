@@ -177,7 +177,9 @@ while (curIndex !== 0) {
 function restart() {
     shuffleCards();
     score = 0;
+    errors = 0;
     document.querySelector(".score").textContent = score;
+    document.querySelector('#errors').textContent = errors;
     gameBoard.innerHTML = "";
     gameStart();
    
@@ -193,23 +195,21 @@ function cardFlip() {
             cardTwo = this;
             flippedCards = false;
             isAMatch();
-            // addRuns();
-            // cardsUnflipped();
-            // render();
         }
-        // addRuns();
     }
     
 }
 
 function isAMatch() {
     if (cardOne.dataset.name === cardTwo.dataset.name) {
-        // addRuns();
-        lockBoard = false;
+        // lockBoard = false;
+        addRuns();
     } else {
+        addStrikes();
         cardsUnflipped();
+        
     }
-
+   
 }
 
 function disableCards() {
@@ -223,14 +223,21 @@ function cardsUnflipped() {
         cardOne.classList.remove("flip-card");
         cardTwo.classList.remove("flip-card");
         lockBoard = false;
-    }, 1000);
+    }, 1200);
+    
 }
 
+function addStrikes() {
+    document.querySelector('#errors').textContent = errors++;
+    
+   }
+    
 function addRuns() {
-   return score++;
+    document.querySelector('.score').textContent = score;
+    score++;
+   }
     
-    
-}
+
 
 
 
