@@ -4,7 +4,7 @@
 //    A result message - display if the user won or loss the game
 
 // 2) Define the required constants:
-//    There are 30 choices a user can make ("tiger", "coyote", "parrot", "raccoon", etc)
+//    There are 20 choices a user can make 
 //    We'll need a reference to a DOM element to display messages
 
 // 3) Handle a player clicking a button
@@ -14,7 +14,7 @@
 // 5) Compare the player choice 1 and choice 2 if they are matching
 
 // 6) Render a win/lose/tie message to the player 
-//    If player makes 3 wrong choices they lose
+//    If player makes 21 wrong choices they lose
 //    Clearly indicate if the player won or loss
 const gameBoard = document.querySelector('#game-board')
 
@@ -121,7 +121,9 @@ let ballCards = [
     }
 ];
 
-// let frontCards = ["images", "./images/hhhhh.png", ]
+//<----------------------------------VARIABLES --------------------------------------------------------------->
+
+
 let cardOne, cardTwo;
 
 let lockBoard = false;
@@ -130,23 +132,26 @@ let errors = 0;
 
 let score = 0;
 
+let flippedCards = false;
+// <----------------------------------Consants------------------------------------------------------------------>
+
 const strikesMax = 21;
 
 const runsMax = 10;
 
-let flippedCards = false;
+
 
 const resultsContent = document.querySelector('#results-content');
 
+// <------------------------------------- Catched El----------------------------------------------------->
 
-
+// document.querySelector('#errors').textContent = errors;
+// document.querySelector('.score').textContent = score;
 // <-------------------------------------Functions-------------------------------------------------------->
 
 
 
 
-// document.querySelector('#errors').textContent = errors;
-// document.querySelector('.score').textContent = score;
 
 
 function gameStart() {
@@ -162,7 +167,7 @@ function gameStart() {
           <img class="back-image" src=${ballCard.back}>
           </div>`;
         gameBoard.appendChild(ballCardEl)// pushes the ballcards elelment to the gameboard (parent)
-        ballCardEl.addEventListener("click", cardFlip) // add an click event when the cards are clicked
+        ballCardEl.addEventListener("click", cardFlip) // add an click event when the cards are clicked // added eventlistener listen for click
     }
 
 }
@@ -251,9 +256,10 @@ function gameResult() {
     } else if (errors === strikesMax) { //if errors is equal to 21 player lose
         resultsContent.textContent = 'StrikeOut!! You Lose, Try Again?';
     } else {
-        resultsContent.textContent = '';
+        resultsContent.textContent = 'StrikeOut of HomeRun!';
     };
 };
+restart(); // call restrt function here doesnt really do anything from what i can tell.
 
 
 
