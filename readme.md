@@ -1,6 +1,6 @@
 # Baseball Memory Card Game
 
-#### INSERT 1 SENTANCE SUMMARY OF YOUR APPLICATION/GAME HERE
+#### MATCH ALL BASEBALL CARDS!! 
 <!-- <img src="path to your game screenshot" alt="Description of Screenshot"/>
 
 <img src="path to your gif/video" style="width:100vw; height:100vh" alt="Text describing your video"/> -->
@@ -41,7 +41,7 @@ If a player has 21 stikeouts they may continue the game but they will not win!
 
 
 ## <a name="deployment"></a>Deployed Link
-<!-- [Netlify]([https://wonderful-brahmagupta-6a75d3.netlify.com](https://connect4pc.netlify.app/))
+<!-- [Netlify](https://exquisite-crostata-b08775.netlify.app)
 
 * You can view the repository:
 [Github.com](https://github.com/ochouno2364/Browser-Game-Memory/blob/main/app.js)
