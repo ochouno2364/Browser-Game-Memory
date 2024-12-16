@@ -1,4 +1,4 @@
-# GAME NAME/APPLICATION TITLE
+# Baseball Memory Card Game
 
 #### INSERT 1 SENTANCE SUMMARY OF YOUR APPLICATION/GAME HERE
 <!-- <img src="path to your game screenshot" alt="Description of Screenshot"/>
