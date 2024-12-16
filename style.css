@@ -67,3 +67,28 @@ h3 {
     background-size: cover;
     
 }
+
+.resultsmodal {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url(./images/cardbackground.jpg);
+}
+
+#results-content {
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+    color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.instructions {
+    color: #000000;
+    font-size: larger;
+}

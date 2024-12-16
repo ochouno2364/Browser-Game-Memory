@@ -25,48 +25,48 @@ let ballCards = [
         "back": "./images/hhhhh.png"
     },
     {
-        "image":"./images/Ballcards2.png",
+        "image": "./images/Ballcards2.png",
         "name": "Jazz Chisholm",
         "back": "./images/hhhhh.png"
     },
     {
-        "image":"./images/Ballcards3.png",
+        "image": "./images/Ballcards3.png",
         "name": "Elly De La Cruz",
         "back": "./images/hhhhh.png"
     },
     {
-        "image":"./images/Ballcards4.png",
-        "name":"Wander Franco",
+        "image": "./images/Ballcards4.png",
+        "name": "Wander Franco",
         "back": "./images/hhhhh.png"
     },
     {
-        "image":"./images/Ballcards5.png",
-        "name":"Fernando Tatis Jr.",
+        "image": "./images/Ballcards5.png",
+        "name": "Fernando Tatis Jr.",
         "back": "./images/hhhhh.png"
     },
     {
-        "image":"./images/Ballcards6.png",
-        "name":"Prelander Berroa",
+        "image": "./images/Ballcards6.png",
+        "name": "Prelander Berroa",
         "back": "./images/hhhhh.png"
     },
     {
-        "image":"./images/Ballcards7.png",
-        "name":"Bo Jackson",
+        "image": "./images/Ballcards7.png",
+        "name": "Bo Jackson",
         "back": "./images/hhhhh.png"
     },
     {
-        "image":"./images/Ballcards8.png",
-        "name":"Ronald Acuna Jr.",
+        "image": "./images/Ballcards8.png",
+        "name": "Ronald Acuna Jr.",
         "back": "./images/hhhhh.png"
     },
     {
-        "image":"./images/Ballcards9.png",
-        "name":"Daulton Varsho",
+        "image": "./images/Ballcards9.png",
+        "name": "Daulton Varsho",
         "back": "./images/hhhhh.png"
     },
     {
-        "image":"./images/Ballcards10.png",
-        "name":"Pete Alonso",
+        "image": "./images/Ballcards10.png",
+        "name": "Pete Alonso",
         "back": "./images/hhhhh.png"
     },
     {
@@ -75,48 +75,48 @@ let ballCards = [
         "back": "./images/hhhhh.png"
     },
     {
-        "image":"./images/Ballcards2.png",
+        "image": "./images/Ballcards2.png",
         "name": "Jazz Chisholm",
         "back": "./images/hhhhh.png"
     },
     {
-        "image":"./images/Ballcards3.png",
+        "image": "./images/Ballcards3.png",
         "name": "Elly De La Cruz",
         "back": "./images/hhhhh.png"
     },
     {
-        "image":"./images/Ballcards4.png",
-        "name":"Wander Franco",
+        "image": "./images/Ballcards4.png",
+        "name": "Wander Franco",
         "back": "./images/hhhhh.png"
     },
     {
-        "image":"./images/Ballcards5.png",
-        "name":"Fernando Tatis Jr.",
+        "image": "./images/Ballcards5.png",
+        "name": "Fernando Tatis Jr.",
         "back": "./images/hhhhh.png"
     },
     {
-        "image":"./images/Ballcards6.png",
-        "name":"Prelander Berroa",
+        "image": "./images/Ballcards6.png",
+        "name": "Prelander Berroa",
         "back": "./images/hhhhh.png"
     },
     {
-        "image":"./images/Ballcards7.png",
-        "name":"Bo Jackson",
+        "image": "./images/Ballcards7.png",
+        "name": "Bo Jackson",
         "back": "./images/hhhhh.png"
     },
     {
-        "image":"./images/Ballcards8.png",
-        "name":"Ronald Acuna Jr.",
+        "image": "./images/Ballcards8.png",
+        "name": "Ronald Acuna Jr.",
         "back": "./images/hhhhh.png"
     },
     {
-        "image":"./images/Ballcards9.png",
-        "name":"Daulton Varsho",
+        "image": "./images/Ballcards9.png",
+        "name": "Daulton Varsho",
         "back": "./images/hhhhh.png"
     },
     {
-        "image":"./images/Ballcards10.png",
-        "name":"Pete Alonso",
+        "image": "./images/Ballcards10.png",
+        "name": "Pete Alonso",
         "back": "./images/hhhhh.png"
     }
 ];
@@ -130,17 +130,26 @@ let errors = 0;
 
 let score = 0;
 
+const strikesMax = 21;
+
+const runsMax = 9;
+
 let flippedCards = false;
 
+const resultsContent = document.querySelector('#results-content');
 
-document.querySelector('#errors').textContent = errors;
-document.querySelector('.score').textContent = score;
 
-// function newBoard() {
-//     cardOne = null;
-//     cardTwo = null;
-//     lockBoard = false;
-// }
+const runsMaxMsg = document.querySelector('.score');
+const strikesMaxMsg = document.querySelector('#errors');
+
+
+
+
+
+
+// document.querySelector('#errors').textContent = errors;
+// document.querySelector('.score').textContent = score;
+
 
 function gameStart() {
     for (let ballCard of ballCards) {
@@ -156,22 +165,22 @@ function gameStart() {
           </div>`;
         gameBoard.appendChild(ballCardEl)
         ballCardEl.addEventListener("click", cardFlip)
-    } 
-   
+    }
+
 }
 
 function shuffleCards() {
     let curIndex = ballCards.length,
-    ranIndex,
-    tempVal;
-while (curIndex !== 0) {
-    ranIndex = Math.floor(Math.random() * curIndex);
-    curIndex -= 1;
-    tempVal = ballCards[curIndex];
-    ballCards[curIndex]= ballCards[ranIndex];
-    ballCards[ranIndex] = tempVal
+        ranIndex,
+        tempVal;
+    while (curIndex !== 0) {
+        ranIndex = Math.floor(Math.random() * curIndex);
+        curIndex -= 1;
+        tempVal = ballCards[curIndex];
+        ballCards[curIndex] = ballCards[ranIndex];
+        ballCards[ranIndex] = tempVal
 
-}
+    }
 }
 
 function restart() {
@@ -182,35 +191,36 @@ function restart() {
     document.querySelector('#errors').textContent = errors;
     gameBoard.innerHTML = "";
     gameStart();
-   
+
 }
 
 function cardFlip() {
     if (lockBoard === false) {
         this.classList.add("flip-card");
-        if ( flippedCards === false) {
+        if (flippedCards === false) {
             flippedCards = true;
             cardOne = this;
         } else {
             cardTwo = this;
             flippedCards = false;
             isAMatch();
+            gameResult(); 
         }
     }
-    
 }
 
 function isAMatch() {
     if (cardOne.dataset.name === cardTwo.dataset.name) {
-        // lockBoard = false;
         addRuns();
     } else {
         addStrikes();
         cardsUnflipped();
         
+
     }
-   
+
 }
+
 
 function disableCards() {
     cardOne.removeEventListener("click", cardFlip);
@@ -224,60 +234,36 @@ function cardsUnflipped() {
         cardTwo.classList.remove("flip-card");
         lockBoard = false;
     }, 1200);
-    
+
 }
 
 function addStrikes() {
-    document.querySelector('#errors').textContent = errors++;
-    
-   }
-    
+    document.querySelector('#errors').textContent = errors++ + 1;
+
+
+}
+
 function addRuns() {
-    document.querySelector('.score').textContent = score;
-    score++;
-   }
-    
+    document.querySelector('.score').textContent = score++ + 1;
+}
+
+function gameResult() {
+    if (score === runsMax) {
+        resultsContent.textContent = 'HomeRun!! You Win!';
+    } else if (errors === strikesMax) {
+        resultsContent.textContent = 'StrikeOut!! You Lose, Try Again?';
+    } else {
+        resultsContent.textContent = '';
+    };
+};
 
 
 
 
-
-document.querySelector('.score').textContent = score;
-
-// let cardsArr = []; // set cardReset to any empty array
-// const gameBoard = []; // set gameBoard to any empty array
-// let rows = 5;
-// let columns = 4;
+// let gameResults = document.getElementsByClassName(".resultsmodal");
+// let closeButton = document.getElementsByClassName(".close")
 
 
-// window.onload = function () {
-//     shuffleCards();
-//     gameStart();
-// }
 
-//  function shuffleCards () {
-//     cardsArr = ballCards.concat(ballCards); // ballCards.concat gives make 2 of each card
-//     console.log(cardsArr); // shows the ballCards  x2
-//     for (let i = 0; i < cardsArr.length; i++) { //for loop to iterate through ballCards
-//         let a = Math.floor(Math.random() * cardsArr.length); // new init {a} when cards reach the cards length to get a random card (index)
-//         let b = cardsArr[i]; // change the order   //init b 
-//         cardsArr[i] = cardsArr[a]; //after i goes through the loop it eaquals (a) that has been randomized
-//         cardsArr[a] = b; // then b retains the value of (a)
-//     }
-//     console.log(cardsArr); //prints the new randomized array of cards
-// }
+// document.querySelector('.score').textContent = score;
 
-// function gameStart() {
-//     for (let r = 0; r < rows; r++) {
-//         let row = [];
-//     for (let c = 0; c < columns; c++) {
-//         let ballcardsImg = cardsArr.pop();
-//         row.push(ballcardsImg);
-
-//         // let ballCard = document.createElement('img');
-//         // ballCard.id = r.toString() + '-' + c.toString();
-//         // ballCard.src = ballcardsImg + '.png';
-//         // ballCard.classList.add('ballcards')
-//         // document.getElementById('game-board').append(ballCard)
-//     }
-//     gameBoard.push(row)
