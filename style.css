@@ -1,6 +1,14 @@
 * {
     box-sizing: border-box;
 }
+@font-face {
+    font-family: Spirit;
+    src: url(./fonts/Fighting\ Spirit\ 2.otf);
+}
+@font-face {
+    font-family: best;
+    src: url(./fonts/CHRISTMAS\ COMEBACK.otf);
+}
 body {
     background-image: url(./images/cardbackground.jpg);
     text-align: center;
@@ -25,19 +33,22 @@ body {
 }
 h1 {
     color: #f0f8ff;
-    font-family: cursive;
+    font-family: Spirit;
     display: flex;
     justify-content: center;
 }
 h3 {
     color: #ff0000;
-    font-family: cursive;
+    font-family: Spirit;
     display: flex;
     justify-content: flex-start;
     margin: 0px 0px 0px 20px;
 }
 .restart-button button {
      background-color: #008000;
+     font-family: best;
+     font-weight: 900;
+     
 }
 .front-image {
     width: 100px;
@@ -68,16 +79,6 @@ h3 {
     
 }
 
-.resultsmodal {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-image: url(./images/cardbackground.jpg);
-}
-
 #results-content {
     text-align: center;
     font-size: larger;
@@ -86,9 +87,13 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: Spirit;
 }
 
 .instructions {
     color: #000000;
     font-size: larger;
+    font-family: Spirit;
+    background-color: #f0f8ff;
+    font-weight: bold;
 }

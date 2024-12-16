@@ -132,7 +132,7 @@ let score = 0;
 
 const strikesMax = 21;
 
-const runsMax = 9;
+const runsMax = 10;
 
 let flippedCards = false;
 
