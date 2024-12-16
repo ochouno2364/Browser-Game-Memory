@@ -48,13 +48,15 @@ If a player has 21 stikeouts they may continue the game but they will not win!
 * If unable to view please go live locally through VS Code -->
 
 ## <a name="author"></a>About The Author
-I am a software engineering student that is earger to learn diffrerent ways in executing code. I look for to building many websites and apps that correspond with making daily tasks easier. Building code that executes the way you need it to can be stressful but the finshed product is worth every error!
+I am a software engineering student that is eager to learn diffrerent ways in executing code. I look for to building many websites and apps that correspond with making daily tasks easier. Building code that executes the way you need it to can be stressful but the finshed product is worth every error!
     
 ## Works Cited:
 *https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
 *Understanding “this” in javascript: 
 * 	the this object doesn't change. It is the owner of the function. It is, in most cases like this, simply a node and you can reference all of its properties like this.className. (think of it as you would a node or whatnot that you get with document.getElementById). It is just the "owner" of the function. Therefore, you are just passing the this object to jQuery's $(). Conclusion: If you want to use jQuery functions for the current node, use $(this). But if you want to access the objects own properties (e.g. .name, className, .id), use simply this.
-- https://stackoverflow.com/questions/8469635/jquery-when-to-use-this-and-when-to-use-this
+*What is a .json file? Why is it used?
+- JSON file (JavaScript Object Notation) is a text-based format that stores and exchanges data in a way that's both human-readable and machine-parsable. The file most be fetched from a local or remote server in order to function. In this project ti realized that i didnt need to have a json file if i use an array in my javascript.
+- https://www.tutorialspoint.com/json/json_syntax.htm
 
 
 
