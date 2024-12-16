@@ -139,10 +139,8 @@ let flippedCards = false;
 const resultsContent = document.querySelector('#results-content');
 
 
-const runsMaxMsg = document.querySelector('.score');
-const strikesMaxMsg = document.querySelector('#errors');
 
-
+// <-------------------------------------Functions-------------------------------------------------------->
 
 
 
@@ -155,7 +153,7 @@ function gameStart() {
     for (let ballCard of ballCards) {
         const ballCardEl = document.createElement("div");
         ballCardEl.classList.add("ballcards");
-        ballCardEl.setAttribute("data-name", ballCard.name);
+        ballCardEl.setAttribute("data-name", ballCard.name);// creates all the ball cards in a div and pulls the data name
         ballCardEl.innerHTML = `
         <div class="front">
           <img class="front-image" src=${ballCard.image}>
@@ -163,58 +161,58 @@ function gameStart() {
           <div class="back"
           <img class="back-image" src=${ballCard.back}>
           </div>`;
-        gameBoard.appendChild(ballCardEl)
-        ballCardEl.addEventListener("click", cardFlip)
+        gameBoard.appendChild(ballCardEl)// pushes the ballcards elelment to the gameboard (parent)
+        ballCardEl.addEventListener("click", cardFlip) // add an click event when the cards are clicked
     }
 
 }
 
 function shuffleCards() {
-    let curIndex = ballCards.length,
+    let curIndex = ballCards.length, // current index is the length of ballcards (all of the card)
         ranIndex,
         tempVal;
     while (curIndex !== 0) {
-        ranIndex = Math.floor(Math.random() * curIndex);
+        ranIndex = Math.floor(Math.random() * curIndex); //math .floor grabs a random from the bottom of the obeject
         curIndex -= 1;
-        tempVal = ballCards[curIndex];
+        tempVal = ballCards[curIndex]; // temp value now equals ballcards index
         ballCards[curIndex] = ballCards[ranIndex];
-        ballCards[ranIndex] = tempVal
+        ballCards[ranIndex] = tempVal // now the random index is the temp value
 
     }
 }
 
-function restart() {
-    shuffleCards();
+function restart() { // create a function to restart the game
+    shuffleCards(); // must re shuffle cards
     score = 0;
-    errors = 0;
+    errors = 0; // new game score and errors reset
     document.querySelector(".score").textContent = score;
     document.querySelector('#errors').textContent = errors;
-    gameBoard.innerHTML = "";
+    gameBoard.innerHTML = ""; //set inner context to empty string
     gameStart();
 
 }
 
 function cardFlip() {
-    if (lockBoard === false) {
-        this.classList.add("flip-card");
+    if (lockBoard === false) { // if the board is not locked
+        this.classList.add("flip-card"); // add ballcards to a class of flip-card
         if (flippedCards === false) {
             flippedCards = true;
-            cardOne = this;
+            cardOne = this; // this = the ownwer of the function if card one equals the function owner
         } else {
             cardTwo = this;
             flippedCards = false;
-            isAMatch();
-            gameResult(); 
+            isAMatch();// use the check for match function to se if two cards match
+            gameResult(); //use this function to show the game result
         }
     }
 }
 
 function isAMatch() {
-    if (cardOne.dataset.name === cardTwo.dataset.name) {
-        addRuns();
+    if (cardOne.dataset.name === cardTwo.dataset.name) { 
+        addRuns(); // if cardOne and CardTwo are the same add to the runs column
     } else {
-        addStrikes();
-        cardsUnflipped();
+        addStrikes(); // if they do not match add to the strikes 
+        cardsUnflipped(); // if they dont match cards unflip
         
 
     }
@@ -223,7 +221,7 @@ function isAMatch() {
 
 
 function disableCards() {
-    cardOne.removeEventListener("click", cardFlip);
+    cardOne.removeEventListener("click", cardFlip);// removes the flip-card eventlistener
     cardTwo.removeEventListener("click", cardFlip);
 
 }
@@ -233,24 +231,24 @@ function cardsUnflipped() {
         cardOne.classList.remove("flip-card");
         cardTwo.classList.remove("flip-card");
         lockBoard = false;
-    }, 1200);
+    }, 1200);// sets a time of 1.2s so the player can see  the two wrong cards they flipped
 
 }
 
 function addStrikes() {
-    document.querySelector('#errors').textContent = errors++ + 1;
+    document.querySelector('#errors').textContent = errors++ + 1; // adds 1 each wrong matching pair
 
 
 }
 
 function addRuns() {
-    document.querySelector('.score').textContent = score++ + 1;
+    document.querySelector('.score').textContent = score++ + 1; // adds 1 each matching pair
 }
 
 function gameResult() {
-    if (score === runsMax) {
+    if (score === runsMax) { // if the score is equal to 10 player wins
         resultsContent.textContent = 'HomeRun!! You Win!';
-    } else if (errors === strikesMax) {
+    } else if (errors === strikesMax) { //if errors is equal to 21 player lose
         resultsContent.textContent = 'StrikeOut!! You Lose, Try Again?';
     } else {
         resultsContent.textContent = '';
@@ -260,10 +258,4 @@ function gameResult() {
 
 
 
-// let gameResults = document.getElementsByClassName(".resultsmodal");
-// let closeButton = document.getElementsByClassName(".close")
-
-
-
-// document.querySelector('.score').textContent = score;
 
